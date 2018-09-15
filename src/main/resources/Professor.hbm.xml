@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="Persistence">
+    <class name="Model.Professor" table="professors">
+        <id name="username" column="username"/>
+        <property name="completeName" column="completeName"/>
+        <property name="email" column="email"/>
+        <property name="password" column="password"/>
+    </class>
+</hibernate-mapping>

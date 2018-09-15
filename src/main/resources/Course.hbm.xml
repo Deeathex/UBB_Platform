@@ -1,0 +1,35 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="Model.Course" table="courses">
+
+        <id name="title" column="title" type="java.lang.String"/>
+
+        <bag name="admins" cascade="all" table="professorscourses" fetch="select" lazy="false">
+            <key column="title"/>
+            <many-to-many column="username" class="Model.Professor"/>
+        </bag>
+
+        <bag name="tutors" cascade="all" table="professorscourses" fetch="select" lazy="false">
+            <key column="title"/>
+            <many-to-many column="username" class="Model.Professor"/>
+        </bag>
+
+        <bag name="students" cascade="all" table="studentscourses" fetch="select" lazy="false">
+            <key column="title"/>
+            <many-to-many column="username" class="Model.Student"/>
+        </bag>
+
+        <bag name="tasks" cascade="all" fetch="select" lazy="false">
+            <key column="title"/>
+            <one-to-many class="Model.Task"/>
+        </bag>
+
+        <property name="description" column="description" type="java.lang.String"/>
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="ubb_platform@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="ubb_platform">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="bd_users"/>
+    <schema id="4" parent="1" name="dbpw_jsp"/>
+    <schema id="5" parent="1" name="dbpw_php"/>
+    <schema id="6" parent="1" name="information_schema"/>
+    <schema id="7" parent="1" name="issdonaresange"/>
+    <schema id="8" parent="1" name="labajax"/>
+    <schema id="9" parent="1" name="labphp"/>
+    <schema id="10" parent="1" name="mysql"/>
+    <schema id="11" parent="1" name="performance_schema"/>
+    <schema id="12" parent="1" name="practic"/>
+    <schema id="13" parent="1" name="practicmpp"/>
+    <schema id="14" parent="1" name="pregatire1"/>
+    <schema id="15" parent="1" name="pregatire1mpp"/>
+    <schema id="16" parent="1" name="pregatire2"/>
+    <schema id="17" parent="1" name="pregatire2mpp"/>
+    <schema id="18" parent="1" name="pregatire4"/>
+    <schema id="19" parent="1" name="sakila"/>
+    <schema id="20" parent="1" name="sys"/>
+    <schema id="21" parent="1" name="world"/>
+    <table id="22" parent="2" name="courses"/>
+    <table id="23" parent="2" name="professors"/>
+    <table id="24" parent="2" name="professorscourses"/>
+    <table id="25" parent="2" name="students"/>
+    <table id="26" parent="2" name="studentscourses"/>
+    <table id="27" parent="2" name="submissions"/>
+    <table id="28" parent="2" name="tasks"/>
+    <column id="29" parent="22" name="title">
+      <Position>1</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="22" name="description">
+      <Position>2</Position>
+      <DataType>varchar(500)|0</DataType>
+    </column>
+    <key id="31" parent="22" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>title</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="32" parent="23" name="username">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="23" name="completeName">
+      <Position>2</Position>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="34" parent="23" name="email">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="35" parent="23" name="password">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <key id="36" parent="23" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>username</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="37" parent="24" name="username">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="24" name="title">
+      <Position>2</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="24" name="permission">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <index id="40" parent="24" name="title_idx">
+      <ColNames>title</ColNames>
+    </index>
+    <key id="41" parent="24" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>username
+title</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="42" parent="24" name="usernameConstraint">
+      <ColNames>username</ColNames>
+      <RefSchemaName>ubb_platform</RefSchemaName>
+      <RefTableName>professors</RefTableName>
+      <RefColNames>username</RefColNames>
+    </foreign-key>
+    <foreign-key id="43" parent="24" name="titleConstraint">
+      <ColNames>title</ColNames>
+      <RefSchemaName>ubb_platform</RefSchemaName>
+      <RefTableName>courses</RefTableName>
+      <RefColNames>title</RefColNames>
+    </foreign-key>
+    <column id="44" parent="25" name="username">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="25" name="completeName">
+      <Position>2</Position>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="46" parent="25" name="email">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="47" parent="25" name="password">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="48" parent="25" name="class">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="49" parent="25" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>username</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="50" parent="26" name="username">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="26" name="title">
+      <Position>2</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="52" parent="26" name="title_idx">
+      <ColNames>title</ColNames>
+    </index>
+    <index id="53" parent="26" name="username_idx">
+      <ColNames>username</ColNames>
+    </index>
+    <key id="54" parent="26" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>username
+title</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="55" parent="26" name="username">
+      <ColNames>username</ColNames>
+      <RefSchemaName>ubb_platform</RefSchemaName>
+      <RefTableName>students</RefTableName>
+      <RefColNames>username</RefColNames>
+    </foreign-key>
+    <foreign-key id="56" parent="26" name="title">
+      <ColNames>title</ColNames>
+      <RefSchemaName>ubb_platform</RefSchemaName>
+      <RefTableName>courses</RefTableName>
+      <RefColNames>title</RefColNames>
+    </foreign-key>
+    <column id="57" parent="27" name="username">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="27" name="idTask">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="27" name="date">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="60" parent="27" name="grade">
+      <Position>4</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <index id="61" parent="27" name="idTask_idx">
+      <ColNames>idTask</ColNames>
+    </index>
+    <key id="62" parent="27" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>username
+idTask</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="63" parent="27" name="usernameStudent">
+      <ColNames>username</ColNames>
+      <RefSchemaName>ubb_platform</RefSchemaName>
+      <RefTableName>students</RefTableName>
+      <RefColNames>username</RefColNames>
+    </foreign-key>
+    <foreign-key id="64" parent="27" name="idTask">
+      <ColNames>idTask</ColNames>
+      <RefSchemaName>ubb_platform</RefSchemaName>
+      <RefTableName>tasks</RefTableName>
+      <RefColNames>idTask</RefColNames>
+    </foreign-key>
+    <column id="65" parent="28" name="idTask">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="66" parent="28" name="deadline">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="67" parent="28" name="gradingWeight">
+      <Position>3</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <column id="68" parent="28" name="submissionLimit">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="69" parent="28" name="description">
+      <Position>5</Position>
+      <DataType>varchar(500)|0</DataType>
+    </column>
+    <column id="70" parent="28" name="title">
+      <Position>6</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <index id="71" parent="28" name="title_idx">
+      <ColNames>title</ColNames>
+    </index>
+    <key id="72" parent="28" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idTask</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="73" parent="28" name="titleCourse">
+      <ColNames>title</ColNames>
+      <RefSchemaName>ubb_platform</RefSchemaName>
+      <RefTableName>courses</RefTableName>
+      <RefColNames>title</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
